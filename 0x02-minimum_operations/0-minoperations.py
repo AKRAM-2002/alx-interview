@@ -4,13 +4,14 @@
 
 """
 
+
 def is_prime(n):
     """
     Check if a number is prime.
-    
+
     Args:
     n (int): The number to check.
-    
+
     Returns:
     bool: True if n is a prime number, False otherwise.
     """
@@ -22,25 +23,26 @@ def is_prime(n):
             return False
     return True
 
+
 def minOperations(n):
     """
-    Calculate the minimum number of operations (Copy All and Paste) required 
+    Calculate the minimum number of operations (Copy All and Paste) required
     to achieve exactly n 'H' characters in the text editor.
-    
+
     Args:
     n (int): The target number of 'H' characters.
-    
+
     Returns:
-    int: The fewest number of operations to reach n 'H' characters. 
+    int: The fewest number of operations to reach n 'H' characters.
          If n is impossible, return 0.
     """
     if n <= 1:
         # If n is 1 or less, it's impossible or already at the target.
         return 0
-    
+
     operations = 0
     divisor = 2
-    
+
     # Factorizing n by its smallest divisors
     while n > 1:
         # While n is divisible by the current divisor
@@ -51,5 +53,5 @@ def minOperations(n):
             n //= divisor
         # Move to the next potential divisor
         divisor += 1
-    
+
     return operations
