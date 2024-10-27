@@ -13,18 +13,19 @@ count = 0  # Keep count of the number of lines processed
 try:
     for line in sys.stdin:
         line_list = line.split(" ")
-        
+
         if len(line_list) > 4:
             status_code = line_list[-2]
             try:
                 file_size = int(line_list[-1])
             except ValueError:
                 continue  # Skip lines with invalid file size
-            
-            # Check if the status code exists in the dictionary and increment its count
+
+            # Check if the status code exists in the dictionary and increment
+            # its count
             if status_code in status_codes_dict:
                 status_codes_dict[status_code] += 1
-            
+
             # Update total size
             total_size += file_size
             # Update count of lines
