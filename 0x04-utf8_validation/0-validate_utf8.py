@@ -3,6 +3,7 @@
 
 from typing import List
 
+
 def validUTF8(data: List[int]) -> bool:
     """Validates UTF-8 encoding."""
     # Number of continuation bytes needed
@@ -14,9 +15,10 @@ def validUTF8(data: List[int]) -> bool:
 
         # Get binary representation of the byte, padded to 8 bits
         lead_byte_bin = bin(byte)[2:].zfill(8)
-        
+
         if continuation_bytes == 0:
-            # Determine the number of continuation bytes needed based on the lead byte
+            # Determine the number of continuation bytes needed based on the
+            # lead byte
             if lead_byte_bin[0] == '0':  # 1-byte character (ASCII)
                 continue
             elif lead_byte_bin[:3] == '110':  # 2-byte character
@@ -33,6 +35,6 @@ def validUTF8(data: List[int]) -> bool:
                 return False
             # Decrease the continuation byte counter
             continuation_bytes -= 1
-    
+
     # Ensure there are no remaining continuation bytes required
     return continuation_bytes == 0
