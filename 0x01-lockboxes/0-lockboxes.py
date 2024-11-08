@@ -18,9 +18,13 @@ def canUnlockAll(boxes: List[List[int]]) -> bool:
 
     while keys:
         current_key = keys.pop()
+        print(current_key)
         for key in boxes[current_key]:
             if key not in unlocked and key < n:
                 unlocked.add(key)
                 keys.append(key)
 
     return len(unlocked) == n
+
+boxes = [[1], [2], [3], [4], []]
+print(canUnlockAll(boxes))
