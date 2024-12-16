@@ -11,6 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "0x06-starwars_api": "file:",
+    "axios": "^1.7.7",
     "request": "^2.88.2"
   }
 }
